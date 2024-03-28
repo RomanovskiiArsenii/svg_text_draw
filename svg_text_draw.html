@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        body {
+            background-color: rgb(24, 24, 24);
+        }
+
+        .svg-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .svg {
+            width: 100vw;
+            height: 15vw;
+            overflow: visible;
+        }
+
+        .text {
+            font-size: 12vw;
+            line-height: 1em;
+            font-family: "Kalam", cursive;
+            font-weight: 900;
+            stroke-width: 3px;
+            animation: drawText 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes drawText {
+
+            0%,
+            10% {
+                fill: none;
+                stroke: rgba(255, 200, 0, 1);
+                stroke-dasharray: 50% 100%;
+                stroke-dashoffset: 50%;
+            }
+
+            70% {
+                fill: rgba(255, 200, 0, 0);
+                stroke: rgba(255, 200, 0, 1);
+                stroke-dasharray: 50% 0%;
+                stroke-dashoffset: 0%;
+            }
+
+            80%,
+            100% {
+                fill: rgba(255, 200, 0, 1);
+                stroke: rgba(255, 200, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="svg-wrapper">
+        <svg class="svg">
+            <text class="text" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                Hello World!
+            </text>
+        </svg>
+
+    </div>
+
+</body>
+
+</html>
